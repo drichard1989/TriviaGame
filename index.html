@@ -24,82 +24,92 @@
 
 <body>
 
+	<!-- This is the intro header that is hidden when the start click is pressed. It is accomplished by a jQuery code that adds a class of hidden to the below div. -->
+	<div class="row " id="headerRow">
+		<div class="col-sm-5">
+			
+		</div>
+		
+		<div class="col-sm-6">
 
-<div class="row " id="headerRow">
-	<div class="col-sm-4"></div>
-	<div class="col-sm-6">
+			<header><em><b>Inception Quiz</b></em></header>
 
-		<header><em><b>Inception Quiz</b></em></header>
+			<p>Here, you will enter your own dreamscape, and attempt to navigate your own mind's architecture to complete a quiz. Beware, your ideas might be stolen, or worse, an idea might be planted in your mind...</p>
+			
 
-		<p>Here, you will enter your own dreamscape, and attempt to navigate your own mind's architecture to complete a quiz. Beware, your ideas might be stolen, or worse, an idea might be planted in your mind...</p>
-		<button type="button" class="btn btn-secondary btn-lg" id="goUnderButton">Go under...</button>
+			<!-- This is the button that initializes the first change in the page -->
+			<button type="button" class="btn btn-secondary btn-lg" id="goUnderButton">Go under...</button>
 
-	</div>
-	<div class="col-sm-2"></div>
-</div>
+		</div>
+		
+		<div class="col-sm-1">
 
-<div class="row hidden" id="quizSection">
-	
-	<div class="col-sm-4"></div>
-	<div class="col-sm-6" id="quiz">
-		<header>The Dream is Collapsing...</header>
+		</div>
 
-		<h3 class="question">1. How long did it take Christopher Nolan to write the script for Inception?</h3>
-
-		<label class="radio-inline answer"><input type="radio" name="optradio">6 Months</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">1 Year</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">4 Years</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">8 Years</label>
-
-		<h3 class="question">1. How long did it take Christopher Nolan to write the script for Inception?</h3>
-
-		<label class="radio-inline answer"><input type="radio" name="optradio">6 Months</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">1 Year</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">4 Years</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">8 Years</label>
-
-		<h3 class="question">1. How long did it take Christopher Nolan to write the script for Inception?</h3>
-
-		<label class="radio-inline answer"><input type="radio" name="optradio">6 Months</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">1 Year</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">4 Years</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">8 Years</label>
-
-		<h3 class="question">1. How long did it take Christopher Nolan to write the script for Inception?</h3>
-
-		<label class="radio-inline answer"><input type="radio" name="optradio">6 Months</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">1 Year</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">4 Years</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">8 Years</label>
-
-		<h3 class="question">1. How long did it take Christopher Nolan to write the script for Inception?</h3>
-
-		<label class="radio-inline answer"><input type="radio" name="optradio">6 Months</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">1 Year</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">4 Years</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">8 Years</label>
-
-		<h3 class="question">1. How long did it take Christopher Nolan to write the script for Inception?</h3>
-
-		<label class="radio-inline answer"><input type="radio" name="optradio">6 Months</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">1 Year</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">4 Years</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">8 Years</label>
-
-		<h3 class="question">1. How long did it take Christopher Nolan to write the script for Inception?</h3>
-
-		<label class="radio-inline answer"><input type="radio" name="optradio">6 Months</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">1 Year</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">4 Years</label>
-		<label class="radio-inline answer"><input type="radio" name="optradio">8 Years</label>
+	</div><!-- Closing div for intro header section -->
 
 
-	</div>
-	<div class="col-sm-2"></div>
+	<!-- This is the quiz section that reveals itself when the button is clicked. This is accomplished by my JQuery removing the class below of hidden.  -->
+	<div class="row hidden" id="quizSection">
+		
+		<div class="col-sm-5">
+			
+		</div>
 
+		<div class="col-sm-6" id="quiz">
+			
+			<header>The Dream is Collapsing...</header>
 
+		
+			<h3 class="question">1. How long did it take Christopher Nolan to write the script for Inception?</h3>
 
-</div>
+			<label class="radio-inline answer"><input type="radio" name="optradio1">6 Months</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio1">1 Year</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio1">4 Years</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio1" value="true">8 Years</label>
+
+			<h3 class="question">2. You are waiting for a "-----"...</h3>
+
+			<label class="radio-inline answer"><input type="radio" name="optradio2">Boat</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio2">Plane</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio2" value="true">Train</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio2">Car</label>
+
+			<h3 class="question">3. What is the number that keeps re-appearing throughout the film?</h3>
+
+			<label class="radio-inline answer"><input type="radio" name="optradio3" value="true">528491</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio3">69638</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio3">8675309</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio3">90210</label>
+
+			<h3 class="question">4. Why is Dom not allowed back in the United States?</h3>
+
+			<label class="radio-inline answer"><input type="radio" name="optradio4">He commited arson</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio4">He tried to plant an idea in the presidents head</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio4" value="true">He is believed to have killed his wife</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio4">He cannot get a work visa</label>
+
+			<h3 class="question">5. In the first scene, how many dream layers do they dive into?</h3>
+
+			<label class="radio-inline answer"><input type="radio" name="optradio5" value="true">2</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio5">3</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio5">1</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio5">0</label>
+
+			<h3 class="question">6. What is the name of the place you go to if you die in the middle of the mission they are in?</h3>
+
+			<label class="radio-inline answer"><input type="radio" name="optradio6">Hell</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio6">Inferno</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio6" value="true">Limbo</label>
+			<label class="radio-inline answer"><input type="radio" name="optradio6">Extraction</label>
+
+		</div>
+
+		<div class="col-sm-1">
+			
+		</div>
+
+	</div><!-- This is the closing Div for the quiz section.  -->
 
 <script type="text/javascript" src="assets/javascript/app.js"></script>
 
