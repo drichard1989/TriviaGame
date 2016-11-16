@@ -1,6 +1,3 @@
-
-
-
 $(document).ready(function(){
 
 // All the variables I will need
@@ -24,7 +21,6 @@ function run() {
 	counter = setInterval(decrement, 1000);
 };
 
-
 // This function reduces the time, and at 0, runs the funcion that will kick it to the next page. 
 function decrement () {
 	timeAllowed--;
@@ -40,9 +36,6 @@ function decrement () {
 	$(document).on("click", "#goUnderButton", function(){
 
 		goUnder();
-		
-
-
 	});
 
 
@@ -57,26 +50,30 @@ function decrement () {
 	function startTheKick(){
 		$("#quizSection").fadeOut(1000);
 		$("#resultsSection").delay(1000).fadeIn(5000);
+		
+		$("input:checked").each(function(){
+			if($(this).val() == "true"){
+				correctAnswer++;
+			}
+
+			else{
+				incorrectAnswer++;
+			};
+
+		$("#results").html("<h3> Your Results</h3><hr><p>CorrectAnswer: " + correctAnswer + "</p> <p>Incorrect Answers: " + incorrectAnswer + "</p>")
+		});
+
+		console.log("Correct Answers: " + correctAnswer);
+		console.log("Incorrect Answer: " + incorrectAnswer);
 	};
 
 	// This will move the game to the results page by running the function startTheKick if the button is clicked.
 	$(document).on("click", "#startTheKick", function(){
 		startTheKick();
-		
 	});
 
 	$(document).on("click", "#resetTheDream", function(){
 		reset();
 	});
-
-
-
-
-
-
-
-
-
-
 
 });
