@@ -16,6 +16,7 @@ function reset(){
 	timeAllowed = 95;
 	$("#resultsSection").fadeOut(1000);
 	$("#headerRow").delay(1000).fadeIn(5000);
+	clearInterval(counter);
 }
 
 // This function sets the formula to reduce at a rate of 1 second per reduction
