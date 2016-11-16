@@ -7,7 +7,7 @@ $(document).ready(function(){
 var dreamMusic = new Audio(src = "assets/music/dreamMusic.mp3")
 var correctAnswer = 0;
 var incorrectAnswer = 0;
-var timeAllowed = 90;
+var timeAllowed = 95;
 var counter ;
 
 function run() {
@@ -29,7 +29,7 @@ function decrement () {
 		dreamMusic.play();
 		console.log("click");
 		$("#headerRow").fadeOut(1000);
-		$("#quizSection").delay(1000).fadeIn(2000);
+		$("#quizSection").delay(1000).fadeIn(7000);
 		
 
 
