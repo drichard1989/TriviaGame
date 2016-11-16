@@ -16,7 +16,7 @@ function run() {
 
 function decrement () {
 	timeAllowed--;
-	$("#quizSection").html("<h2>" + timeAllowed + "</h2>");
+	$("#timeAllowed").html("<h2>" + timeAllowed + "</h2>");
 };
 
 	// Me playing with the fadeIn method. Not working...
@@ -28,8 +28,9 @@ function decrement () {
 
 		dreamMusic.play();
 		console.log("click");
-		$("#quizSection").removeClass("hidden").fadeIn(1000);
-		$("#headerRow").addClass("hidden");
+		$("#headerRow").fadeOut(1000);
+		$("#quizSection").delay(1000).fadeIn(2000);
+		
 
 
 
