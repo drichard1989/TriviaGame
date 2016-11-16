@@ -10,6 +10,13 @@ var incorrectAnswer = 0;
 var timeAllowed = 95;
 var counter ;
 
+function reset(){
+	correctAnswer = 0;
+	incorrectAnswer = 0;
+	timeAllowed = 95;
+	$("#resultsSection").fadeOut(1000);
+	$("#headerRow").delay(1000).fadeIn(5000);
+}
 
 // This function sets the formula to reduce at a rate of 1 second per reduction
 function run() {
@@ -31,25 +38,34 @@ function decrement () {
 	// music will play, it will hide the intro section and show the quiz section.
 	$(document).on("click", "#goUnderButton", function(){
 
+		goUnder();
+		
+
+
+	});
+
+
+	function goUnder(){
 		dreamMusic.play();
 		console.log("click");
 		$("#headerRow").fadeOut(1000);
 		$("#quizSection").delay(1000).fadeIn(7000);
 		run();
-
-
-	});
-
+	};
 	// This function will send me to the next page. This funciton I think should calculate the results.
 	function startTheKick(){
 		$("#quizSection").fadeOut(1000);
 		$("#resultsSection").delay(1000).fadeIn(5000);
-	}
+	};
 
 	// This will move the game to the results page by running the function startTheKick if the button is clicked.
 	$(document).on("click", "#startTheKick", function(){
 		startTheKick();
 		
+	});
+
+	$(document).on("click", "#resetTheDream", function(){
+		reset();
 	});
 
 
