@@ -19,9 +19,16 @@ header {
 p {
 	color: white;
 	font-size: 20px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
-#quiz {
+
+h3 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+#quiz, #results {
 	text-align: right;
 	margin-top: 5%;
 }
