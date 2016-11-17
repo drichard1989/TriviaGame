@@ -2,18 +2,22 @@ $(document).ready(function(){
 
 // All the variables I will need
 var dreamMusic = new Audio(src = "assets/music/dreamMusic.mp3")
+var totalNumberOfQuestions = 6;
 var correctAnswer = 0;
 var incorrectAnswer = 0;
 var timeAllowed = 95;
 var counter ;
+var unansweredQuestions = 0;
 
 function reset(){
 	correctAnswer = 0;
 	incorrectAnswer = 0;
+	unansweredQuestions = 0;
 	timeAllowed = 95;
 	$("#resultsSection").fadeOut(1000);
 	$("#headerRow").delay(1000).fadeIn(5000);
 	clearInterval(counter);
+	$('input[type="radio"]:checked').prop('checked', false);
 }
 
 // This function sets the formula to reduce at a rate of 1 second per reduction
@@ -60,11 +64,11 @@ function decrement () {
 				incorrectAnswer++;
 			};
 
-		$("#results").html("<h3> Your Results</h3><hr><p>CorrectAnswer: " + correctAnswer + "</p> <p>Incorrect Answers: " + incorrectAnswer + "</p>")
+			unansweredQuestions = totalNumberOfQuestions -(correctAnswer + incorrectAnswer);
+
+		$("#results").html("<h3> Your Results</h3><hr><p>CorrectAnswer: "+ correctAnswer + "</p> <p>Incorrect Answers: " + incorrectAnswer + "</p><p>Unanswered Questions: " + unansweredQuestions + "</p>")
 		});
 
-		console.log("Correct Answers: " + correctAnswer);
-		console.log("Incorrect Answer: " + incorrectAnswer);
 	};
 
 	// This will move the game to the results page by running the function startTheKick if the button is clicked.
