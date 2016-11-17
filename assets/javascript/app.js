@@ -2,13 +2,15 @@ $(document).ready(function(){
 
 // All the variables I will need
 var dreamMusic = new Audio(src = "assets/music/dreamMusic.mp3")
-var totalNumberOfQuestions = 6;
+var totalNumberOfQuestions = 10;
 var correctAnswer = 0;
 var incorrectAnswer = 0;
 var timeAllowed = 95;
 var counter ;
 var unansweredQuestions = 0;
 
+// This function is called when the reset button is clicked at the end of the quiz. 
+// Resets all variables, and restarts the order of events for the quiz.
 function reset(){
 	correctAnswer = 0;
 	incorrectAnswer = 0;
@@ -18,14 +20,14 @@ function reset(){
 	$("#headerRow").delay(1000).fadeIn(5000);
 	clearInterval(counter);
 	$('input[type="radio"]:checked').prop('checked', false);
-}
+};
 
 // This function sets the formula to reduce at a rate of 1 second per reduction
 function run() {
 	counter = setInterval(decrement, 1000);
 };
 
-// This function reduces the time, and at 0, runs the funcion that will kick it to the next page. 
+// This function sets the reduction, and also posts that number dynamically on the webpage using jQuery
 function decrement () {
 	timeAllowed--;
 	$("#timeAllowed").html("<h2>" + timeAllowed + "</h2>");
@@ -35,47 +37,44 @@ function decrement () {
 	}
 };
 
-	// Here, on the click of the go under button, this will start the quiz,
-	// music will play, it will hide the intro section and show the quiz section.
-	$(document).on("click", "#goUnderButton", function(){
-
-		goUnder();
-	});
-
-
-	function goUnder(){
+// This function starts music, fades out the intro #headerRow, and fades in the #quizSection.
+function goUnder(){
 		dreamMusic.play();
-		console.log("click");
 		$("#headerRow").fadeOut(1000);
 		$("#quizSection").delay(1000).fadeIn(7000);
 		run();
-	};
-	// This function will send me to the next page. This funciton I think should calculate the results.
-	function startTheKick(){
-		$("#quizSection").fadeOut(1000);
-		$("#resultsSection").delay(1000).fadeIn(5000);
-		
-		$("input:checked").each(function(){
-			if($(this).val() == "true"){
-				correctAnswer++;
-			}
+};
 
-			else{
-				incorrectAnswer++;
-			};
+// This function will fade out the quiz, fade in the results, which will display the amount of 
+// correct answers, incorrect answers, and unanswered questions dynamically by using jquery to write it in. 
+function startTheKick(){
+	$("#quizSection").fadeOut(1000);
+	$("#resultsSection").delay(1000).fadeIn(5000);
+	
+	$("input:checked").each(function(){
+		if($(this).val() == "true"){
+			correctAnswer++;
+		}
+		else{
+			incorrectAnswer++;
+		};
+		unansweredQuestions = totalNumberOfQuestions -(correctAnswer + incorrectAnswer);
 
-			unansweredQuestions = totalNumberOfQuestions -(correctAnswer + incorrectAnswer);
+	$("#results").html("<h3> Your Results</h3><hr><p>Correct Answers : "+ correctAnswer + "</p> <p>Incorrect Answers: " + incorrectAnswer + "</p><p>Unanswered Questions: " + unansweredQuestions + "</p>")
+	});
+};
 
-		$("#results").html("<h3> Your Results</h3><hr><p>CorrectAnswer: "+ correctAnswer + "</p> <p>Incorrect Answers: " + incorrectAnswer + "</p><p>Unanswered Questions: " + unansweredQuestions + "</p>")
-		});
-
-	};
+	// Here, on the click of the #goUnderButton, this will start the quiz,
+	// music will play, it will hide the intro section and show the quiz section.
+	$(document).on("click", "#goUnderButton", function(){
+		goUnder();
+	});
 
 	// This will move the game to the results page by running the function startTheKick if the button is clicked.
 	$(document).on("click", "#startTheKick", function(){
 		startTheKick();
 	});
-
+	// This will reset the game by running the function reset.
 	$(document).on("click", "#resetTheDream", function(){
 		reset();
 	});
