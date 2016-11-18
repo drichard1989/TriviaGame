@@ -15,16 +15,19 @@ function reset(){
 	correctAnswer = 0;
 	incorrectAnswer = 0;
 	unansweredQuestions = 0;
-	timeAllowed = 95;
 	$("#resultsSection").fadeOut(1000);
 	$("#headerRow").delay(1000).fadeIn(5000);
-	clearInterval(counter);
 	$('input[type="radio"]:checked').prop('checked', false);
+
 };
 
 // This function sets the formula to reduce at a rate of 1 second per reduction
 function run() {
 	counter = setInterval(decrement, 1000);
+};
+
+function stop() {
+	clearInterval(counter);
 };
 
 // This function sets the reduction, and also posts that number dynamically on the webpage using jQuery
@@ -62,6 +65,8 @@ function startTheKick(){
 
 	$("#results").html("<h3> Your Results</h3><hr><p>Correct Answers : "+ correctAnswer + "</p> <p>Incorrect Answers: " + incorrectAnswer + "</p><p>Unanswered Questions: " + unansweredQuestions + "</p>")
 	});
+	stop();
+	timeAllowed = 95;
 };
 
 	// Here, on the click of the #goUnderButton, this will start the quiz,
