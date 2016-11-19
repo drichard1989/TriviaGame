@@ -18,6 +18,8 @@ function reset(){
 	$("#resultsSection").fadeOut(1000);
 	$("#headerRow").delay(1000).fadeIn(5000);
 	$('input[type="radio"]:checked').prop('checked', false);
+	console.log(correctAnswer);
+	$("#results").html("<h3> Your Results</h3><hr><p>Correct Answers : "+ correctAnswer + "</p> <p>Incorrect Answers: " + incorrectAnswer + "</p><p>Unanswered Questions: " + unansweredQuestions + "</p>")
 
 };
 
@@ -63,8 +65,9 @@ function startTheKick(){
 		};
 		unansweredQuestions = totalNumberOfQuestions -(correctAnswer + incorrectAnswer);
 
-	$("#results").html("<h3> Your Results</h3><hr><p>Correct Answers : "+ correctAnswer + "</p> <p>Incorrect Answers: " + incorrectAnswer + "</p><p>Unanswered Questions: " + unansweredQuestions + "</p>")
+		$("#results").html("<h3> Your Results</h3><hr><p>Correct Answers : "+ correctAnswer + "</p> <p>Incorrect Answers: " + incorrectAnswer + "</p><p>Unanswered Questions: " + unansweredQuestions + "</p>")
 	});
+
 	stop();
 	timeAllowed = 95;
 };
