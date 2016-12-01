@@ -63,6 +63,8 @@ function startTheKick(){
 		else{
 			incorrectAnswer++;
 		};
+
+		
 		unansweredQuestions = totalNumberOfQuestions -(correctAnswer + incorrectAnswer);
 
 		$("#results").html("<h3> Your Results</h3><hr><p>Correct Answers : "+ correctAnswer + "</p> <p>Incorrect Answers: " + incorrectAnswer + "</p><p>Unanswered Questions: " + unansweredQuestions + "</p>")
